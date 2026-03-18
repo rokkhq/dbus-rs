@@ -385,7 +385,7 @@ fn get_managed_objects(mut ctx: Context, cr: &mut Crossroads, _: ()) -> Option<C
     }
     let r = Arc::new(Mutex::new(Temp {
         remaining: children.len(),
-        temp_map: HashMap::new(),
+        temp_map: BTreeMap::new(),
         octx: Some(ctx),
     }));
     for subpath in children {
